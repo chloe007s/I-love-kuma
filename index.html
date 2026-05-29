@@ -244,6 +244,7 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
     <div class="tab" data-tab="busan"><span class="tab-icon">📰</span>부산 이슈</div>
     <div class="tab" data-tab="pknu"><span class="tab-icon">🎓</span>부경대</div>
     <div class="tab" data-tab="welfare"><span class="tab-icon">🤝</span>사회복지</div>
+    <div class="tab" data-tab="volunteer"><span class="tab-icon">📊</span>봉사통계</div>
   </div>
 
   <!-- CONTENT AREA -->
@@ -323,7 +324,31 @@ body::before{content:'';position:fixed;inset:0;background-image:radial-gradient(
       <div class="stats-note">📌 출처: 보건복지부 사회보장통계, 통계청 e-나라지표 2024. 최신 정보는 <a href="https://www.bokjiro.go.kr" target="_blank" style="color:var(--pink-dark);">복지로</a> 또는 <a href="https://kosis.kr" target="_blank" style="color:var(--pink-dark);">KOSIS</a>에서 확인하세요.</div>
     </div>
 
-  </div><!-- /content-area -->
+  
+<!-- VOLUNTEER STATS -->
+<div class="panel" id="panel-volunteer">
+<div class="sec-header"><h2>📊 부산 봉사활동 통계</h2><hr></div>
+
+<div class="stats-hero">
+<div class="stat-card"><div class="stat-lbl">총 봉사활동</div><div class="stat-num">311,005</div><div class="stat-sub">부산광역시 기준</div></div>
+<div class="stat-card"><div class="stat-lbl">평일 활동</div><div class="stat-num">263,981</div><div class="stat-sub">84.9%</div></div>
+<div class="stat-card"><div class="stat-lbl">주말 활동</div><div class="stat-num">47,024</div><div class="stat-sub">15.1%</div></div>
+<div class="stat-card"><div class="stat-lbl">최다 시간대</div><div class="stat-num">오후</div><div class="stat-sub">171,073건</div></div>
+</div>
+
+<div class="chart-title">부산 봉사활동 시간대별 현황</div>
+
+<div class="bar-row"><div class="bar-lbl">평일 오전</div><div class="bar-track"><div class="bar-fill" style="width:46%"><span>79,066</span></div></div></div>
+<div class="bar-row"><div class="bar-lbl">평일 오후</div><div class="bar-track"><div class="bar-fill" style="width:100%"><span>171,073</span></div></div></div>
+<div class="bar-row"><div class="bar-lbl">평일 저녁</div><div class="bar-track"><div class="bar-fill" style="width:8%"><span>13,842</span></div></div></div>
+<div class="bar-row"><div class="bar-lbl">주말 오전</div><div class="bar-track"><div class="bar-fill" style="width:7%"><span>12,644</span></div></div></div>
+<div class="bar-row"><div class="bar-lbl">주말 오후</div><div class="bar-track"><div class="bar-fill" style="width:19%"><span>32,881</span></div></div></div>
+<div class="bar-row"><div class="bar-lbl">주말 저녁</div><div class="bar-track"><div class="bar-fill" style="width:1%"><span>1,499</span></div></div></div>
+
+<div class="stats-note">📌 부산 봉사활동은 평일 오후 시간대가 가장 활발합니다.</div>
+</div>
+
+</div><!-- /content-area -->
 </div><!-- /window -->
 
 <script>
@@ -345,7 +370,7 @@ document.querySelectorAll('.tab').forEach(tab=>{
     document.getElementById('panel-'+id).classList.add('active');
     if(id==='weather') loadWeather();
     if(id==='busan'&&!newsLoaded.busan){loadNews('부산 이슈 뉴스','busan-news',7);newsLoaded.busan=true;}
-    if(id==='pknu'&&!newsLoaded.pknu){loadNews('부경대학교','pknu-news',7);newsLoaded.pknu=true;}
+    if(id==='pknu'&&!newsLoaded.pknu){loadNews('부경대학교','pknu-news',7);newsLoaded.pknu=true;} if(id==='volunteer'){document.getElementById('panel-volunteer').classList.add('active');}
   });
 });
 
